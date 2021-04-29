@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rentAroom</title>
+    <script src="https://kit.fontawesome.com/ef834406bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style media="screen">
+      .nav-link, .navbar-brand, .navbar-toggler{
+        color: #d0af84;
+      }
+      </style>
+  </head>
+  <body>
+  <nav class="navbar bg-light sticky-top flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">rentAroom</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <% if(user.seller){ %>
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/seller-main">
+                  <i class="fas fa-home"></i>
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/add-a-room">
+                  <i class="fas fa-plus"></i>
+                  Add a room
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/your-rooms">
+                  <i class="fas fa-door-open"></i>
+                  Your rooms
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/requests">
+                  <i class="fas fa-users"></i>
+                  Requests for viewing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/seller/<%= user.username %>">
+                  <i class="fas fa-user-circle"></i>
+                  Profile
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <% }else{ %>
+          <nav class="col-md-2 d-none d-md-block bg-light sidebar" >
+            <div class="sidebar-sticky " >
+              <!-- <div class="collapse sidebar-collapse" id="navbarSupportedContent"> -->
+                <ul class="nav flex-column" >
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/main">
+                      <i class="fas fa-home"></i>
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/search">
+                      <i class="fas fa-search"></i>
+                      search
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/previous-rooms">
+                      <i class="fas fa-door-open"></i>
+                      Previous rooms
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/requested ">
+                      <i class="fas fa-user-plus"></i>
+                      Your requests
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/user/<%= user.username %>">
+                      <i class="fas fa-user-circle"></i>
+                      Profile
+                    </a>
+                  </li>
+                </ul>
+              </div>
+          </nav>
+      <%  } %>
+        <div class="col-md-9 col-lg-10">
+          <!-- <div class="center"> -->
+            <!-- <div class="login-box"> -->
+              <table class="table login-box">
+      <thead>
+        <% if(requser.username == user.username) {%>
+        <div class="center">
+          <h3>Your personal details</h3>
+        </div>
+        <% }else{ %>
+          <div class="center">
+            <h3>Details</h3>
+          </div>
+        <% } %>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Name:</th>
+          <td> <%=user.name%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Birthday:</th>
+          <td> <%= new Date(user.birthday).toISOString().substring(0, 10)%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Phone:</th>
+          <td> <%=user.phone%> </td>
+        </tr>
+        <tr>
+          <th scope="column">Address</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Housenumber:</th>
+          <td> <%=user.address.housenumber%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Street:</th>
+          <td> <%=user.address.street%> </td>
+        </tr>
+        <tr>
+          <th scope="row">City:</th>
+          <td> <%=user.address.city%> </td>
+        </tr>
+        <tr>
+          <th scope="row">State:</th>
+          <td> <%=user.address.state%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Country:</th>
+          <td> <%=user.address.country%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Pincode:</th>
+          <td> <%=user.address.pincode%> </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+    <% if(requser.username == user.username) {%>
+    <div class="center">
+        <% if(user.seller){ %>
+
+          <button type="submit" name="button" class='btn btn-primary' onclick="location.href='/edit-profile/seller/<%= user.username %>'">edit details</button>
+
+        <% }else{ %>
+          <button type="submit" name="button" class='btn btn-primary' onclick="location.href='/edit-profile/user/<%= user.username %>'">edit details</button>
+
+      <%  } %>
+    </div>
+    <% } %>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>

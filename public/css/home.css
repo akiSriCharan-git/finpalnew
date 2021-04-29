@@ -1,0 +1,37 @@
+.content{
+  margin: 100px;
+}
+
+.carouselItem{
+  border-left: solid #d0af84;
+  padding: 0 10px;
+  width: fit-content;
+}
+
+.main-img{
+  width: 100%;
+  padding: 50px;
+  margin-right: 50px;
+}
+
+.rightToLeft{
+  animation-name: rightToLeft;
+  animation-duration: 1s
+}   
+
+@keyframes rightToLeft{
+  0% {
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

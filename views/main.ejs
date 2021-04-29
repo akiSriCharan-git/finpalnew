@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rentAroom</title>
+    <script src="https://kit.fontawesome.com/ef834406bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style media="screen">
+      .nav-link, .navbar-brand, .navbar-toggler{
+        color: #d0af84;
+      }
+      .btn{
+        border: solid #d0af84;
+        color: #d0af84;
+      }
+      .btn:hover{
+        background-color: #d0af84;
+        color: black;
+      }
+      </style>
+  </head>
+  <body>
+  <nav class="navbar bg-light sticky-top shadow">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fas fa-bars icon"></i></span>
+    </button>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">rentAroom</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row " >
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar" >
+          <div class="sidebar-sticky " >
+            <!-- <div class="collapse sidebar-collapse" id="navbarSupportedContent"> -->
+              <ul class="nav flex-column" >
+                <li class="nav-item">
+                  <a class="nav-link active" href="/main">
+                    <i class="fas fa-home"></i>
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/search">
+                    <i class="fas fa-search"></i>
+                    search
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/previous-rooms">
+                    <i class="fas fa-door-open"></i>
+                    Previous rooms
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/requested ">
+                    <i class="fas fa-user-plus"></i>
+                    Your requests
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/<%= user.username %>">
+                    <i class="fas fa-user-circle"></i>
+                    Profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        <div class="col-md-9 col-lg-10">
+          <h1>Hello <%= user.name %>, welcome to rentAroom</h1>
+          <br><br><br>
+          <h3>See what you have in this website</h3>
+          <br>
+          <br>
+          <div class="center">
+
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <a class="nav-link" href="/search">
+                <i class="fas fa-search fa-3x"></i>
+              </a>
+                <br>
+                <button type="button"class="btn" name="button" onclick="location.href='/search'">Search</button>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <a class="nav-link" href="/previous-rooms">
+                  <i class="fas fa-door-open fa-3x"></i>
+                </a>
+                <br>
+                <button type="button"class="btn" name="button" onclick="location.href='/previous-rooms'">Previous rooms</button>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <a class="nav-link" href="/requested ">
+                  <i class="fas fa-user-plus fa-3x"></i>
+                </a>
+                <br>
+                <button type="button"class="btn" name="button" onclick="location.href='/requested'">Your requests </button>
+
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <a class="nav-link" href="/user/<%= user.username %>">
+                  <i class="fas fa-user-circle fa-3x"></i>
+                </a>
+                <br>
+                <button type="button"class="btn" name="button" onclick="location.href='/user/<%= user.username %>'">Profile </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>

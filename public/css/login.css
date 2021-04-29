@@ -1,0 +1,14 @@
+body{
+  text-align: center;
+}
+
+.center{
+  text-align: center;
+}
+
+.login-box{
+  width: 550px;
+  padding: 50px;
+  margin: 10px auto;
+  border: solid #d0af84
+}

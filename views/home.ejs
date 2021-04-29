@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rentAroom</title>
+    <script src="https://kit.fontawesome.com/ef834406bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style media="screen">
+      .nav-link, .navbar-brand, .navbar-toggler{
+        color: #d0af84;
+      }
+      .btn{
+        border: solid #d0af84;
+        color: #d0af84;
+      }
+      .btn:hover{
+        background-color: #d0af84;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light sticky-top shadow" style="background-color: white; color: #d0af84;">
+  <a class="navbar-brand" href="/">
+    rentAroom
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars icon"></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">User-Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">User-Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/seller-login">Seller-Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/seller-signup">Seller-Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/aboutus">About us</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="content">
+        <div class="rightToLeft">
+          <h2 style="font-size: 70px">rentAroom</h2>
+          <br>
+          <br>
+          <h5>A best place to find a home, away from home</h5>
+          <br>
+          <br>
+        </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carouselItem">
+            <p>Huge discounts in major cities</p>
+            <p>Signup or login now to avial offer</p>
+          </div>
+          <button type="button" name="button" class="btn" onclick="location.href='/signup'">Signup</button>
+          <button type="button" name="button" class="btn" onclick="location.href='/login'">Login</button>
+        </div>
+        <div class="carousel-item">
+          <div class="carouselItem">
+            <p>Are you here for giving a room for lease</p>
+            <p>Then just login or signup here</p>
+          </div>
+          <button type="button" name="button" class="btn" onclick="location.href='/seller-signup'">Signup</button>
+          <button type="button" name="button" class="btn" onclick="location.href='/seller-login'">Login</button>
+        </div>
+        <div class="carousel-item">
+          <div class="carouselItem">
+            <p>You can pay after visiting the room</p>
+            <p>Just click here, we will take care</p>
+          </div>
+          <button type="button" name="button" class="btn" onclick="location.href='/signup'">Shop now</button>
+          <button type="button" name="button" class="btn" onclick="location.href='/login'">Read more</button>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <figure class="image-div">
+        <img class='main-img' src="https://images.unsplash.com/photo-1605882174607-02212c6bf029?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVudCUyMGhvbWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Home-image">
+      </figure>
+    </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>
